@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
 class Persona{
 
-String  name; String surname;
+ String  name; String surname;
 String email;
 String password;
 DateTime birthDate;
 
-Persona({
-    this.name = "Doni",
-    this.surname = "Perello",
-    this.email = "doniperello@example.com",
-    this.password = "123456",
-    DateTime? birthDate, 
-  }) : this.birthDate = birthDate ?? DateTime(2004, 7, 19);
+Persona({required this.name, required this.surname, required this.email, required this.password, required this.birthDate});
 
-  
 String getNameandSurname() {
   return '$name $surname';
 }
