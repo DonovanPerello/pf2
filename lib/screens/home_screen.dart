@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pf2/screens/personal_screen.dart';
 import '../models/persona.dart';
 
 // Usamos StatefulWidget por la reactividad requerida: el estado de la pantalla 
@@ -60,7 +61,9 @@ class _HomePageState extends State<HomePage> {
               children: [             
                ElevatedButton(
                 child: Text("Edit Profile"),
-              onPressed: null,             
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalScreen(persona: user)));
+              },             
             ),
             SizedBox(width: 15),
             ElevatedButton(
