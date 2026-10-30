@@ -23,7 +23,6 @@ class MiApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      // 2. CONFIGURA TU PÁGINA COMO PRINCIPAL AQUÍ
       home: const HomePage(), 
     );
   }
