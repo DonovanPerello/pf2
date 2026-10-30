@@ -60,9 +60,20 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [             
                ElevatedButton(
+
                 child: Text("Edit Profile"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalScreen(persona: user)));
+
+              onPressed: () async {
+               final updatedPersona = await Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => PersonalScreen(persona: user)
+                  ));
+                  if(updatedPersona!=null){
+                    setState(() {
+                      user = updatedPersona;
+                    });
+                  }
               },             
             ),
             SizedBox(width: 15),

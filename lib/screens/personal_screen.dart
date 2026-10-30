@@ -55,8 +55,8 @@ class _PersonalScreenState extends State<PersonalScreen> {
                 
                 if(newDate != null){
                   setState(() {
-                    TextEditingController date = TextEditingController(text:newDate.toString()); 
-                    dateController = date;
+                    dateController.text = newDate.toString().split(' ')[0];
+                    widget.persona.birthDate = newDate;
                   });
 
                 }
@@ -102,7 +102,7 @@ class _PersonalScreenState extends State<PersonalScreen> {
           const SizedBox(height: 16),
 
 
-          // 5. Date of Birth
+         
           TextField(
             controller: dateController,
             decoration: const InputDecoration(labelText: 'Date of Birth'),
@@ -118,6 +118,25 @@ class _PersonalScreenState extends State<PersonalScreen> {
           const SizedBox(height: 32,),
 
           ElevatedButton(onPressed: (){
+
+            if(nameController.text.isEmpty || 
+                  surnameController.text.isEmpty || 
+                  emailController.text.isEmpty || 
+                  passwordController.text.isEmpty ||
+                  dateController.text.isEmpty){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("Error: Todos los campos son obligatorios"))
+                    );
+                    return;
+                  }
+
+            widget.persona.name = nameController.text;
+            widget.persona.surname = surnameController.text;
+            widget.persona.email = emailController.text;
+            widget.persona.password = passwordController.text;
+            
+            Navigator.pop(context,widget.persona);
+
             
           }, child: const Text("Save and return"))
 
