@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                    SizedBox(height: 15),
                    Text('Email: ${user.email}'),
                    SizedBox(height: 15),
-                   Text('Birth Date: ${user.birthDate.toLocal()}'),
+                   Text('Birth Date: ${user.birthDate.toString().split(' ')[0]}'),
                 ],
                 
                 

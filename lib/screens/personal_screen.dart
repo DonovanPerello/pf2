@@ -28,7 +28,7 @@ class _PersonalScreenState extends State<PersonalScreen> {
     nameController = TextEditingController(text: widget.persona.name.toUpperCase());
     surnameController = TextEditingController(text: widget.persona.surname);
     emailController = TextEditingController(text: widget.persona.email);
-    dateController = TextEditingController(text: widget.persona.birthDate.toString());
+    dateController = TextEditingController(text: widget.persona.birthDate.toString().split(' ')[0]);
     passwordController = TextEditingController(text: widget.persona.password);
     
   
@@ -130,9 +130,9 @@ class _PersonalScreenState extends State<PersonalScreen> {
                     return;
                   }
 
-            widget.persona.name = nameController.text;
-            widget.persona.surname = surnameController.text;
-            widget.persona.email = emailController.text;
+            widget.persona.name = nameController.text[0].toUpperCase() + nameController.text.substring(1).toLowerCase();
+            widget.persona.surname = surnameController.text[0].toUpperCase() + surnameController.text.substring(1).toLowerCase();
+            widget.persona.email = emailController.text.toLowerCase();
             widget.persona.password = passwordController.text;
             
             Navigator.pop(context,widget.persona);
