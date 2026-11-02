@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../widgets/interactive_viewer.dart';
 import '../widgets/dismissible.dart';
 import '../widgets/segmented_button.dart';
-
+//Usamos StatefulWidget porque los componentes interactivos internos (SegmentedButton, Dismissible, InteractiveViewer)
+// necesitan gestionar variables de estado (selecciones y listas de elementos) 
+//que obligan a redibujar la interfaz al interactuar con ellos.
 
 class WidgetScreen extends StatefulWidget {
   const WidgetScreen({super.key});
