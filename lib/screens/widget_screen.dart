@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/Dismissible.dart';
+import '../widgets/interactive_viewer.dart';
+import '../widgets/dismissible.dart';
+import '../widgets/segmented_button.dart';
 
 
 class WidgetScreen extends StatefulWidget {
@@ -21,8 +22,15 @@ class _WidgetScreenState extends State<WidgetScreen> {
         children: [
           const Text("Ejemplo de Dismissible: ", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           const SizedBox(height: 10),
-          const DismissibleExample()
-
+          const DismissibleExample(),
+          const SizedBox(height: 20),
+          const Text("Ejemplo de SegmentedButton: ", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 10),
+          const Segmentedbutton(),
+          const SizedBox(height: 20),
+          const Text("InteractiveViewer: ", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 10),
+          const InteractiveViewerEjemplo(),
         ],
       ),
     );
