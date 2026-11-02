@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pf2/screens/personal_screen.dart';
 import '../models/persona.dart';
+import '../screens/widget_screen.dart';
 
 // Usamos StatefulWidget por la reactividad requerida: el estado de la pantalla 
 //(la información del perfil) debe redibujarse y 
@@ -79,7 +80,13 @@ class _HomePageState extends State<HomePage> {
             SizedBox(width: 15),
             ElevatedButton(
               child: Text("Explore Widget Showcase"),
-              onPressed: null,
+              onPressed: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => const WidgetScreen()
+                    ));
+              },
               
             )
             ],),
