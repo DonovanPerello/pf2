@@ -14,12 +14,9 @@ class _DismissibleExampleState extends State<DismissibleExample> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // Recorremos la lista y creamos un Dismissible por cada número
       children: items.map((item) {
         return Dismissible(
-          // La key necesita el valor exacto para saber cuál borrar
           key: ValueKey<int>(item), 
-          // Fondo rojo al deslizar (es el color habitual para borrar)
           background: Container(color: Colors.red), 
           onDismissed: (direction) {
             setState(() {

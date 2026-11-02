@@ -28,7 +28,6 @@ class _SegmentedbuttonState extends State<Segmentedbutton> {
             label: Text('Option C'),
           ),
         ],
-        // 2. Le pasamos nuestra variable en lugar del texto fijo.
         selected: opcionSeleccionada, 
         
         onSelectionChanged: (Set<String> nuevaSeleccion) {

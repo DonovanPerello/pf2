@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/persona.dart';
+// Utilizo un StatefulWidget en esta pantalla por las necesidades de reactividad y gestión de memoria del formulario. 
+// A nivel de reactividad, necesito usar setState() para redibujar la interfaz cada vez que selecciono una nueva fecha en el calendario. 
+// A nivel de gestión de memoria, es obligatorio usar los métodos del ciclo de vida (initState y dispose) para crear los TextEditingController al abrir la vista y destruirlos al salir, evitando así fugas de memoria.
 
 class PersonalScreen extends StatefulWidget {
   final Persona persona;
